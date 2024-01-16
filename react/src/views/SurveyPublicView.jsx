@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axiosClient from "../axios";
 import PublicQuestionView from "../components/PublicQuestionView";
-import {GlobalContext} from "../contexts/GlobalProvider";
 
 export default function SurveyPublicView() {
   const answers = {};

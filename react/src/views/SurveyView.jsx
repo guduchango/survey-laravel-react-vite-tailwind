@@ -8,13 +8,11 @@ import SurveyQuestions from "../components/SurveyQuestions";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
-import {GlobalContext} from "../contexts/GlobalProvider";
 
 export default function SurveyView() {
   const { showToast } = useStateContext();
   const { id } = useParams();
   const navigate = useNavigate();
-  const context = useContext(GlobalContext)
 
 
   const [survey, setSurvey] = useState({

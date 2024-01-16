@@ -6,10 +6,8 @@ import PageComponent from "../components/PageComponent";
 import PaginationLinks from "../components/PaginationLinks";
 import SurveyListItem from "../components/SurveyListItem";
 import { useStateContext } from "../contexts/ContextProvider";
-import { GlobalContext } from "../contexts/GlobalProvider";
 
 export default function Surveys() {
-  const context = useContext(GlobalContext)
   const { showToast } = useStateContext();
   const [surveys, setSurveys] = useState([]);
   const [meta, setMeta] = useState({});
@@ -29,17 +27,14 @@ export default function Surveys() {
   };
 
   const getSurveys = (url) => {
-    if(context.surveys?.length !== 0){
-      setSurveys(context.surveys)
-    }else {
       url = url || "/survey";
+      console.log('urlV',url)
       setLoading(true);
       axiosClient.get(url).then(({ data }) => {
         setSurveys(data.data);
         setMeta(data.meta);
         setLoading(false);
       });
-    }
   };
 
   useEffect(() => {
