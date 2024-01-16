@@ -60,31 +60,31 @@ npm run build
 
 * Login
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/login.png "Login")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/login.png "Login")
 
 * Sign Up 
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/sign_up.png "Sign Up")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/sign_up.png "Sign Up")
 
 * Dashboard 
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/dashboard.png "Dashboard")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/dashboard.png "Dashboard")
 
 * Surveys Grid
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/grid.png "Surveys Grid")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/grid.png "Surveys Grid")
 
 * Edit Survey
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_1.png "Edit 1")
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_2.png "Edit 2")
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_3.png "Edit 3")
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_4.png "Edit 4")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_1.png "Edit 1")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_2.png "Edit 2")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_3.png "Edit 3")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_4.png "Edit 4")
 
 * Public Survey
 
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_1.png "Public survey 1")
-![alt text](https://survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_2.png "Public survey 2")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_1.png "Public survey 1")
+![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_2.png "Public survey 2")
 
 
 
