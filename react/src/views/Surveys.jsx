@@ -1,14 +1,15 @@
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axiosClient from "../axios";
 import TButton from "../components/core/TButton";
 import PageComponent from "../components/PageComponent";
 import PaginationLinks from "../components/PaginationLinks";
 import SurveyListItem from "../components/SurveyListItem";
 import { useStateContext } from "../contexts/ContextProvider";
-import router from "../router";
+import { GlobalContext } from "../contexts/GlobalProvider";
 
 export default function Surveys() {
+  const context = useContext(GlobalContext)
   const { showToast } = useStateContext();
   const [surveys, setSurveys] = useState([]);
   const [meta, setMeta] = useState({});
@@ -28,13 +29,17 @@ export default function Surveys() {
   };
 
   const getSurveys = (url) => {
-    url = url || "/survey";
-    setLoading(true);
-    axiosClient.get(url).then(({ data }) => {
-      setSurveys(data.data);
-      setMeta(data.meta);
-      setLoading(false);
-    });
+    if(context.surveys?.length !== 0){
+      setSurveys(context.surveys)
+    }else {
+      url = url || "/survey";
+      setLoading(true);
+      axiosClient.get(url).then(({ data }) => {
+        setSurveys(data.data);
+        setMeta(data.meta);
+        setLoading(false);
+      });
+    }
   };
 
   useEffect(() => {

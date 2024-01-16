@@ -1,18 +1,21 @@
 import { LinkIcon, PhotoIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import {useContext, useState} from "react";
 import TButton from "../components/core/TButton";
 import PageComponent from "../components/PageComponent";
 import axiosClient from "../axios.js";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams  } from "react-router-dom";
 import SurveyQuestions from "../components/SurveyQuestions";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
+import {GlobalContext} from "../contexts/GlobalProvider";
 
 export default function SurveyView() {
   const { showToast } = useStateContext();
-  const navigate = useNavigate();
   const { id } = useParams();
+  const navigate = useNavigate();
+  const context = useContext(GlobalContext)
+
 
   const [survey, setSurvey] = useState({
     title: "",
@@ -60,7 +63,6 @@ export default function SurveyView() {
 
     res
       .then((res) => {
-        console.log(res);
         navigate("/surveys");
         if (id) {
           showToast("The survey was updated");
@@ -72,7 +74,6 @@ export default function SurveyView() {
         if (err && err.response) {
           setError(err.response.data.message);
         }
-        console.log(err, err.response);
       });
   };
 
@@ -95,8 +96,14 @@ export default function SurveyView() {
   };
 
   const onDelete = () => {
-
-  }
+    if (window.confirm("Are you sure you want to delete this survey?")) {
+      axiosClient.delete(`/survey/${survey.id}`).then(() => {
+        showToast('The survey was deleted');
+        navigate("/surveys");
+        context.setSurveys([])
+      });
+    }
+  };
 
   useEffect(() => {
     if (id) {
@@ -114,7 +121,7 @@ export default function SurveyView() {
       title={!id ? "Create new Survey" : "Update Survey"}
       buttons={
         <div className="flex gap-2">
-          <TButton color="green" href={`/survey/public/${survey.slug}`}>
+          <TButton color="green" to={`/survey/public/${survey.slug}`}>
             <LinkIcon className="h-4 w-4 mr-2" />
             Public Link
           </TButton>

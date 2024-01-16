@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 import DefaultLayout from "./components/DefaultLayout";
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
@@ -7,8 +7,9 @@ import Signup from "./views/Signup";
 import SurveyPublicView from "./views/SurveyPublicView";
 import Surveys from "./views/Surveys";
 import SurveyView from "./views/SurveyView";
+import PublicLayout from "./components/PublicLayout";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <DefaultLayout />,
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/surveys/:id",
         element: <SurveyView />,
-      },
+      }
     ],
   },
   {
@@ -50,8 +51,14 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/survey/public/:slug",
-    element: <SurveyPublicView />,
+    path: "/",
+    element: <PublicLayout />,
+    children: [
+      {
+        path: "/survey/public/:slug",
+        element: <SurveyPublicView />,
+      },
+    ],
   },
 ]);
 

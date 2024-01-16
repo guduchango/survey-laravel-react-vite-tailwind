@@ -13,11 +13,12 @@ use App\Models\SurveyQuestion;
 use App\Models\SurveyQuestionAnswer;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Enum;
 use Symfony\Component\HttpFoundation\Request;
+use function Psr\Log\error;
 
 class SurveyController extends Controller
 {
@@ -73,7 +74,7 @@ class SurveyController extends Controller
     public function show(Survey $survey, Request $request)
     {
         $user = $request->user();
-        if ($user->id !== $survey->user_id) {
+        if ($user->id != $survey->user_id) {
             return abort(403, 'Unauthorized action');
         }
         return new SurveyResource($survey);
@@ -145,7 +146,7 @@ class SurveyController extends Controller
     public function destroy(Survey $survey, Request $request)
     {
         $user = $request->user();
-        if ($user->id !== $survey->user_id) {
+        if ($user->id != $survey->user_id) {
             return abort(403, 'Unauthorized action.');
         }
 

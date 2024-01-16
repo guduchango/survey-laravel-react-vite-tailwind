@@ -31,7 +31,6 @@ export default function Signup() {
       .catch((error) => {
         if (error.response) {
           const finalErrors = Object.values(error.response.data.errors).reduce((accum, next) => [...accum, ...next], [])
-          console.log(finalErrors)
           setError({__html: finalErrors.join('<br>')})
         }
         console.error(error)

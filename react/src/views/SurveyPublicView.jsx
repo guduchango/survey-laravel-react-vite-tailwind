@@ -1,8 +1,9 @@
-import { useState } from "react";
+import {useContext, useState} from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axiosClient from "../axios";
 import PublicQuestionView from "../components/PublicQuestionView";
+import {GlobalContext} from "../contexts/GlobalProvider";
 
 export default function SurveyPublicView() {
   const answers = {};
@@ -28,13 +29,10 @@ export default function SurveyPublicView() {
 
   function answerChanged(question, value) {
     answers[question.id] = value;
-    console.log(question, value);
   }
 
   function onSubmit(ev) {
     ev.preventDefault();
-
-    console.log(answers);
     axiosClient
       .post(`/survey/${survey.id}/answer`, {
         answers,
