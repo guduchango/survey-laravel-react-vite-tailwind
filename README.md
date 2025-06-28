@@ -1,90 +1,100 @@
-# Survey Management Project
+# Survey App with Laravel 9 & React
 
-## Laravel + React + Vite + TailwindCss
+### 🔑 Auth Screen
 
-```
-git clone https://github.com/guduchango/survey-laravel-react-vite-tailwind.git
+<p align="center">
+  <img src="docs/auth_login.png" alt="login" width="200"/>
+</p>
 
-cd ./survey-laravel-react-vite-tailwind.git
+<p align="center">
+  <img src="docs/auth_register.png" alt="register" width="200"/>
+</p>
 
-### Backend
+---
 
-cp ./.env.example ./.env
+### Dashboard
 
-edit ./.env 
+<p align="center">
+  <img src="docs/dashboard.png" alt="dashboard" width="200"/>
+</p>
 
-with =>
-----------
-DB_DATABASE=my-database-name
-DB_USERNAME=my-database-username
-DB_PASSWORD=my-database-pass
-----------
 
+
+
+---
+
+### Survey
+
+<p align="center">
+  <img src="docs/survey_list.png" alt="survey list" width="200"/>
+</p>
+
+<p align="center">
+  <img src="docs/survey_update.png" alt="survey update" width="200"/>
+</p>
+
+
+<p align="center">
+  <img src="docs/survey_form.png" alt="survey form" width="200"/>
+</p>
+
+<p align="center">
+  <img src="docs/survey_form_2.png" alt="survey form" width="200"/>         
+</p>
+
+<p align="center">
+  <img src="docs/survey_form_3.png" alt="survey form" width="200"/>         
+</p>
+
+<p align="center">
+  <img src="docs/survey_public.png" alt="survey public" width="200"/>         
+</p>
+
+<p align="center">
+  <img src="docs/survey_public_2.png" alt="survey public" width="200"/>         
+</p>
+
+---
+
+
+## 🚀 Project Overview
+A powerful and flexible survey application built with Laravel 9 (API backend) and React (frontend), featuring:
+- User registration & login.
+- Dynamic survey creation with customizable fields (select, input, checkbox, etc).
+- Ability to add images to surveys.
+- Public sharing of surveys without requiring login.
+- Dashboard and survey listing for authenticated users.
+
+## 🔗 Live Demo
+- [Backend App](https://survey-laravel-react-vite-tailwind.edgardoponce.com/)
+- [Frontend App](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/)
+
+## 🛠️ Installation
+
+### Backend (Laravel 9)
+```bash
+git clone https://github.com/guduchango/survey-laravel-react-vite-tailwind
+cd survey-laravel-react-vite-tailwind/backend
 composer install
-
+cp .env.example .env
+php artisan key:generate
 php artisan migrate
-
 php artisan serve
+```
 
-### Frontend
-
-cd ./react
-
-edit ./.env
-
-with =>
-----------
-VITE_API_BASE_URL=my-frontend-url
-----------
-
+### Frontend (React + Vite + Tailwind)
+```bash
+cd survey-laravel-react-vite-tailwind/frontend
 npm install
-
 npm run dev
 ```
 
-### Deploy
+## 🙌 Contributing
+I’d love your help! Feel free to open issues, suggest features, or submit pull requests.
 
-```
-npm run build
+## ❤️ Acknowledgements
+Big thanks to the open-source community and all the packages that made this project possible.
 
-// search "dist" folder and copy files
-```
-
-### Live proyect
-
-[Survey frontend ](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/)
-
-[Survey backend ](https://survey-laravel-react-vite-tailwind.edgardoponce.com/)
-
-### ¿What the project do?
-
-* Login
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/login.png "Login")
-
-* Sign Up 
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/sign_up.png "Sign Up")
-
-* Dashboard 
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/dashboard.png "Dashboard")
-
-* Surveys Grid
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/grid.png "Surveys Grid")
-
-* Edit Survey
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_1.png "Edit 1")
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_2.png "Edit 2")
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_3.png "Edit 3")
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/edit_4.png "Edit 4")
-
-* Public Survey
-
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_1.png "Public survey 1")
-![alt text](https://frontend-survey-laravel-react-vite-tailwind.edgardoponce.com/survey_photos/public_2.png "Public survey 2")
-
-
-
+## 📫 Contact
+Learn more about my work on [edgardoponce.com](https://edgardoponce.com)  
+Check out the repo: [GitHub](https://github.com/guduchango/survey-laravel-react-vite-tailwind)
